@@ -7,8 +7,7 @@ def safe_print_list(my_list=[], x=0):
             print(my_list[i], end=' ')
             count += 1
             i += 1
-        except IndexError:
-            # Break the loop if the list index is out of range
+        except TypeError:
             break
-    print()  # New line after printing the elements
-    return count
+        print()
+        return count
