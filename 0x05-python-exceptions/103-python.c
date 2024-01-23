@@ -49,27 +49,23 @@ void print_python_list(PyObject *p)
 
 void print_python_bytes(PyObject *p)
 {
-	Py_ssize_t size, i;
-	char *bytes_str;
-
-	if (!PyBytes_Check(p))
-	{
-		fprintf(stderr, "[ERROR] Invalid Bytes Object\n");
-		return;
-	}
-
-	size = PyBytes_Size(p);
-	bytes_str = PyBytes_AsString(p);
+	long unsigned int size;
+	unsigned int i;
+	char *trying_str = NULL;
 
 	printf("[.] bytes object info\n");
-	printf("  size: %ld\n", size);
-	printf("  trying string: %s\n", bytes_str);
-
-	printf("  first %d bytes: ", (int)(size > 10 ? 10 : size));
-	for (i = 0; i < (size > 10 ? 10 : size); i++)
+	if (!PyBytes_Check(p))
 	{
-		printf("%02x ", (unsigned char)bytes_str[i]);
+		printf("  [ERROR] Invalid Bytes Object\n");
+		return;
 	}
+	size = ((PyVarObject *)p)->ob_size;
+	trying_str = ((PyBytesObject *)p)->ob_sval;
+	printf("  size: %lu\n", size);
+	printf("  trying string: %s\n", trying_str);
+	printf("  first %lu bytes:", size < 10 ? size + 1 : 10);
+	for (i = 0; i < 10 && i < size; i++)
+		printf(" %02hhx", trying_str[i]);
 	printf("\n");
 }
 
@@ -82,12 +78,16 @@ void print_python_bytes(PyObject *p)
 
 void print_python_float(PyObject *p)
 {
-	if (!PyFloat_Check(p))
-	{
-		fprintf(stderr, "[ERROR] Invalid Float Object\n");
-		return;
-	}
+	PyFloatObject *f = (PyFloatObject *)p;
+	double d = f->ob_fval;
+	char *str = NULL;
 
 	printf("[.] float object info\n");
-	printf("  value: %f\n", PyFloat_AsDouble(p));
+	if (!PyFloat_Check(f))
+	{
+		printf("  [ERROR] Invalid Float Object\n");
+		return;
+	}
+	str = PyOS_double_to_string(d, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
+	printf("  value: %s\n", str);
 }
