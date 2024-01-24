@@ -12,13 +12,15 @@ class Node:
             data: An integer, the data for the new node.
             next_node: A Node, the next node in the linked list.
         """
+        self._data = None
         self.data = data
+        self._next_node = None
         self.next_node = next_node
 
     @property
     def data(self):
         """Retrieve the data of the node."""
-        return self.__data
+        return self._data
 
     @data.setter
     def data(self, value):
@@ -32,12 +34,12 @@ class Node:
         """
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
-        self.__data = value
+        self._data = value
 
     @property
     def next_node(self):
         """Retrieve the next node in the linked list."""
-        return self.__next_node
+        return self._next_node
 
     @next_node.setter
     def next_node(self, value):
@@ -51,7 +53,7 @@ class Node:
         """
         if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
-        self.__next_node = value
+        self._next_node = value
 
 
 class SinglyLinkedList:
@@ -89,3 +91,4 @@ class SinglyLinkedList:
             result += str(current.data) + "\n"
             current = current.next_node
         return result
+
