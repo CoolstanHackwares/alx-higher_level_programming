@@ -28,7 +28,7 @@ if __name__ == "__main__":
         """check that a queen does not already exist in that y value"""
         for x in range(n):
             if y == a[x][1]:
-                return True
+                 return True
         return False
 
     def reject(x, y):
@@ -43,7 +43,7 @@ if __name__ == "__main__":
         return True
 
     def clear_a(x):
-        """clears the answers from the point of failure on"""
+        """clears the answer from the point of failure"""
         for i in range(x, n):
             a[i][1] = None
 
