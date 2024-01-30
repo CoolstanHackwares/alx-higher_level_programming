@@ -11,7 +11,7 @@ class Rectangle:
         """Initialize a Rectangle instance with default
         width=0 and height=0.
         """
-        self.width = width  
+        self.width = width
         self.height = height
 
     def __str__(self):
@@ -23,10 +23,10 @@ class Rectangle:
         for i in range(self.__height):
             for j in range(self.__width):
                 rect_str += '#'
-            rect_str += '\n'  
+            rect_str += '\n'
         return rect_str[:-1]
 
-    def __repr__(self): 
+    def __repr__(self):
         """Return a string representation able to recreate a Rectangle."""
         return f"Rectangle({self.__width}, {self.__height})"
 
@@ -46,7 +46,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get or set the height of the Rectangle.""" 
+        """Get or set the height of the Rectangle."""
         return self.__height
 
     @height.setter
@@ -60,11 +60,11 @@ class Rectangle:
 
     def area(self):
         """Return the area of the Rectangle."""
-        return self.__width * self.__height 
+        return self.__width * self.__height
 
     def perimeter(self):
         """Return the perimeter of the Rectangle."""
-        if self.__height == 0 or self.__width == 0:  
-            return 0 
+        if self.__height == 0 or self.__width == 0:
+            return 0
 
         return 2 * (self.__width + self.__height)
