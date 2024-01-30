@@ -13,7 +13,7 @@ class Rectangle:
 
         Args:
             width (int): The width of the new rectangle.
-            height (int): The height of the new rectangle. 
+            height (int): The height of the new rectangle.
         """
         self.width = width
         self.height = height
@@ -79,7 +79,7 @@ class Rectangle:
         for i in range(self.__height):
             [rect.append(str(self.print_symbol)) for j in range(self.__width)]
             if i != self.__height - 1:
-                rect.append("\n")  
+                rect.append("\n")
         return "".join(rect)
 
     def __repr__(self):
