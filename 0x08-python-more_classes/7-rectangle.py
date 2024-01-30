@@ -9,7 +9,7 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle.""" 
+        """Initialize a new Rectangle."""
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
@@ -42,16 +42,16 @@ class Rectangle:
 
     def area(self):
         """Return the area of the rectangle."""
-        return self.__width * self.__height   
+        return self.__width * self.__height
 
     def perimeter(self):
         """Return the perimeter of the rectangle."""
         if self.__width == 0 or self.__height == 0:
-            return 0  
+            return 0
         return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
-        """Return the printable representation of the Rectangle."""  
+        """Return the printable representation of the Rectangle."""
         if self.__width == 0 or self.__height == 0:
             return ""
 
@@ -59,7 +59,7 @@ class Rectangle:
         for i in range(self.__height):
             [rect.append(str(self.print_symbol)) for j in range(self.__width)]
             if i != self.__height - 1:
-                rect.append("\n")  
+                rect.append("\n")
         return "".join(rect)
 
     def __repr__(self):
