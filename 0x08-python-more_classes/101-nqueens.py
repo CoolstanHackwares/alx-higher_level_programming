@@ -4,6 +4,7 @@ nqueens program to print the coordinates of n queens
 on an nxn grid such that they are all in non-attacking positions
 """
 
+
 from sys import argv
 
 if __name__ == "__main__":
@@ -58,4 +59,4 @@ if __name__ == "__main__":
                     nqueens(x + 1)  # moves on to next x value to continue
 
     # start the recursive process at x = 0
-    nqueens(0)eens(0)
+    nqueens(0)
