@@ -7,6 +7,6 @@ def lookup(obj):
 
     Returns:
         list: A list object containing string names of available attributes
-
     """
+
     return dir(obj)
