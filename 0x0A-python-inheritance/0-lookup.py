@@ -4,11 +4,14 @@ in an object
 """
 
 def lookup(obj):
-"""Args:
+    """Returns the list of available 
+    attributes and methods of an object
+    
+    Args:
         obj: The object to lookup
-
-Returns:
-A list object containing string names
-of available attributes
-"""
+        
+    Returns:
+        A list object containing string names
+        of available attributes
+    """
     return dir(obj)
