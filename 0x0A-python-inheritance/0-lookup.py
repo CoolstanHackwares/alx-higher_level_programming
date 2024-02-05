@@ -1,4 +1,4 @@
-#usr/bin/python3
+#!usr/bin/python3
 """A function that defines the list of available attributes and methods
 in an object
 """
