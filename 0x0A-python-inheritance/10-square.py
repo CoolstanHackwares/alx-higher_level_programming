@@ -16,7 +16,7 @@ class Square(Rectangle):
         """Initializes a square instance.
 
         Args:
-            - size: The size of the square
+            - size: size of the square
         """
 
         self.integer_validator("size", size)
@@ -24,8 +24,8 @@ class Square(Rectangle):
         self.__size = size
 
     def area(self):
-    """Computes the area of the Square instance.
-    Overwrites the area() method from Rectangle.
-    """
+        """Computes the area of the Square instance.
+        Overwrites the area() method from Rectangle.
+        """
 
-         return self.__size ** 2
+        return self.__size ** 2
