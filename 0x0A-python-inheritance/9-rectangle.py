@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Creates a Rectangle class.
+"""Module 9-rectangle.
+Creates a Rectangle class.
 """
 
 
@@ -19,8 +20,8 @@ class Rectangle(BaseGeometry):
         """Initializes an instance.
 
         Args:
-            - width: The width of the rectangle
-            - heigth: The height of the rectangle
+            - width: width of the rectangle
+            - heigth: height of the rectangle
         """
 
         self.integer_validator("width", width)
@@ -38,4 +39,4 @@ class Rectangle(BaseGeometry):
         Overwrites the area() method from BaseGeometry.
         """
 
-        return self.__width * self.__height_height
+        return self.__width * self.__height
