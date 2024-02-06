@@ -2,13 +2,8 @@
 """
     An empty class representing the base geometry."""
 
+
 class BaseGeometry:
-    """Determines if the empty class represents the base geometry.
+    """Determines if the empty class represents an empty class."""
 
-    Attributes:
-        None
-
-    Methods:
-        None
-    """
     pass
