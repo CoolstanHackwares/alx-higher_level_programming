@@ -1,21 +1,17 @@
 #!/usr/bin/python3
+"""Module 0-read_file.
+Reads from a file and prints.
+"""
+
 
 def read_file(filename=""):
-    """
-    Function to read and print the contents of a text file.
+    """Reads from filename and prints
+    its contents to stdout.
 
     Args:
-        filename (str): The name of the text file to be read.
-
-    Returns:
-        None
+        - filename: The name of the file
     """
-    with open(filename, encoding="utf-8") as file:
 
-        content = file.read()
-
-        print(content, end='')
-
-if __name__ == "__main__":
-
-    read_file("my_file_0.txt")
+    with open(filename) as f:
+        read_text = f.read()
+        print(read_text, end="")
