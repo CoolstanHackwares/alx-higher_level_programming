@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Base Class.
-Contains the Base class for other classes in the project.
+Defines a Base class for other classes in the project.
 """
 
 import json
@@ -43,7 +43,7 @@ class Base:
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         if (type(list_dictionaries) != list or
-                not all(type(x) == dict for x in list_dictionaries)):
+           not all(type(x) == dict for x in list_dictionaries)):
             raise TypeError("list_dictionaries must be a list of dictionaries")
         return json.dumps(list_dictionaries)
 
@@ -67,7 +67,7 @@ class Base:
             jstr = cls.to_json_string([o.to_dictionary() for o in list_objs])
         filename = cls.__name__ + ".json"
         with open(filename, 'w') as f:
-            f.write(jstr)
+                f.write(jstr)
 
     @staticmethod
     def from_json_string(json_string):
@@ -125,8 +125,8 @@ class Base:
         """
 
         if (type(list_objs) != list and
-                list_objs is not None or
-                not all(isinstance(x, cls) for x in list_objs)):
+           list_objs is not None or
+           not all(isinstance(x, cls) for x in list_objs)):
             raise TypeError("list_objs must be a list of instances")
 
         filename = cls.__name__ + ".csv"
