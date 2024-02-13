@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module that contains the Base class for other classes in the project.
+"""Contains the Base class for other classes in the project.
 """
 
 import json
