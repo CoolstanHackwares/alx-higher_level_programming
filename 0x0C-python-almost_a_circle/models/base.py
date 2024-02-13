@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Contains the Base class for other classes in the project.
+"""Base Class.
+Contains the Base class for other classes in the project.
 """
 
 import json
