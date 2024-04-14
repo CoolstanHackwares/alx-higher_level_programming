@@ -1,4 +1,4 @@
-!/usr/bin/python3
+#!/usr/bin/python3
 """Lists all cities of a specific state from the database hbtn_0e_4_usa"""
 
 if __name__ == '__main__':
