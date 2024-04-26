@@ -5,12 +5,13 @@ import requests
 
 
 def get_github_id(username, password):
-    url = f"https://api.github.com/users/{username}"
+    url = f"https://api.github.com/user"
     response = requests.get(url, auth=(username, password))
-    if response.status_code == 200:
-        return response.json()["id"]
-    else:
+    if response.status_code >= 400:
         return None
+    else:
+        return response.json().get('id')
+
 
 if __name__ == "__main__":
     username = sys.argv[1]
