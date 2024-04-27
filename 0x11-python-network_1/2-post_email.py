@@ -10,8 +10,10 @@ import sys
 if __name__ == "__main__":
     url = sys.argv[1]
     email = sys.argv[2]
-    value = {'email': email}
-    data = parse.urlencode(value).encode('ascii')
-    req = request.Request(url, data)
-    with request.urlopen(req) as response:
-        print(response.read().decode("utf-8"))
+    data = urllib.parse.urlencode({'email': email}).encode('utf-8')
+    try:
+        with urllib.request.urlopen(url, data=data) as response:
+            print("Your email is: {}".format(email))
+            print(response.read().decode('utf-8'))
+    except urllib.error.HTTPError as e:
+        print("Error code: {}".format(e.code))
