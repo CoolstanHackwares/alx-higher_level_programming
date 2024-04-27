@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""A script that Sends a POST request to http://0.0.0.0:5000/search_user"""
+"""A script that Sends a POST request to http://0.0.0.0:5000/search_user
+with the letter as a parameter"""
 import sys
 import requests
 
@@ -11,7 +12,10 @@ if __name__ == "__main__":
         q = sys.argv[1]
 
     try:
-        response = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
+        response = requests.post(
+            'http://0.0.0.0:5000/search_user',
+            data={'q': q}
+        )
         data = response.json()
         if data:
             print("[{}] {}".format(data.get('id'), data.get('name')))
