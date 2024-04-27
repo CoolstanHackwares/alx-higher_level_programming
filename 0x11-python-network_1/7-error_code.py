@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A script that Sends a request to a URL 
+"""A script that Sends a request to a URL
 and displays the body of the response"""
 
 import sys
